@@ -1,0 +1,24 @@
+{
+  "name": "@flybyme/mesh-proxy",
+  "version": "1.0.9",
+  "type": "module",
+  "main": "./dist/proxy/proxy.service.js",
+  "types": "./dist/proxy/proxy.service.d.ts",
+  "scripts": {
+    "build": "npx mesh generate --include @flybyme/mesh-ui && tsc",
+    "start": "npm run build && npx mesh start --services ../mesh-ui/dist/"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@flybyme/mesh": "github:FLYBYME/mesh",
+    "@flybyme/mesh-ui": "github:FLYBYME/mesh-ui",
+    "@types/http-proxy": "^1.17.17",
+    "http-proxy": "^1.18.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "typescript": "latest"
+  }
+}
